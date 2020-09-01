@@ -18,8 +18,8 @@ with open(FILE, 'r') as file:
 # and pop it from the data to NOT send the 'content' field related to the
 # 'objectID'
 # https://www.algolia.com/doc/faq/basics/is-there-a-size-limit-for-my-index-records/
-for element in data:
-    if element["objectID"] in EXCEPTIONS:
-        element.pop('content', None)
+# for element in data:
+#     if element["objectID"] in EXCEPTIONS:
+#         element.pop('content', None)
 
 index.replace_all_objects(data, {'safe': True})
